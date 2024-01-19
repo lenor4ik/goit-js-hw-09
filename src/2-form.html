@@ -5,12 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 3</title>
+    <link rel="stylesheet" href="./css/form.css" />
   </head>
   <body>
     <section>
       <a href="./index.html">Go to home</a>
       <h1>Welcome to page 3</h1>
     </section>
+    <form class="feedback-form" autocomplete="off">
+      <label class="text-form">
+        Email
+        <input
+          class="email-form"
+          type="email"
+          name="email"
+          autofocus
+          placeholder="Type area"
+        />
+      </label>
+      <label class="text-form">
+        Message
+        <textarea class="message-form" name="message" rows="8"></textarea>
+      </label>
+      <button class="submit-btn" type="submit">Submit</button>
+    </form>
     <script type="module" src="./js/2-form.js"></script>
   </body>
 </html>
