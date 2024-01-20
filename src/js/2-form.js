@@ -30,20 +30,25 @@ form.addEventListener('input', (e) => {
 });
 
 function restoreData() {
-    const data = loadFromLS(STORAGE_KEY) || {};
+    const data = loadFromLS(STORAGE_KEY);
+    if (data) {
     form.elements.email.value = data.email || '';
-    form.elements.message.value = data.message || '';
+    form.elements.message.value = data.message || '';  
+    }
 }
-
 restoreData();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    const userEmail = form.elements.email.value.trim();
+    const userMessage = form.elements.message.value.trim();
+    
+    if (userEmail && userMessage) {
     const data = loadFromLS(STORAGE_KEY) || {};
-    if (data.email && data.message) {
     localStorage.removeItem(STORAGE_KEY)
     form.reset();  
-    } 
-
-    console.log(data);
+    
+    console.log(data);  
+    }  
 })
